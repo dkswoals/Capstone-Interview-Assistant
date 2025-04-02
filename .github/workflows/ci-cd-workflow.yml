@@ -33,6 +33,10 @@ jobs:
     - name: 🔐 Trust ASP.NET Core Developer Certificate
       run: dotnet dev-certs https --trust
 
+    - name: 🔐 Set OpenAI Connection String
+      run: |
+        dotnet user-secrets --project src\InterviewAssistant.AppHost\ set "ConnectionStrings:openai" "${{ secrets.OPENAI_CONNECTION_STRING }}"
+
     - name: 🛠️ Install trx2junit Tool
       if: github.event_name == 'pull_request'
       run: dotnet tool install --global trx2junit
