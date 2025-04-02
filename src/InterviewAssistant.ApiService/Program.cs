@@ -18,7 +18,6 @@ builder.Services.AddAIModelService();
 
 builder.AddAzureOpenAIClient("openai");
 
-
 builder.Services.AddSingleton<Kernel>(sp =>
 {
     var config = builder.Configuration;
