@@ -35,7 +35,7 @@ jobs:
 
     - name: 🔐 Set OpenAI Connection String
       run: |
-        dotnet user-secrets --project src\InterviewAssistant.AppHost\ set "ConnectionStrings:openai" "${{ secrets.OPENAI_CONNECTION_STRING }}"
+        dotnet user-secrets --project ./src/InterviewAssistant.AppHost/ set "ConnectionStrings:openai" "${{ secrets.OPENAI_CONNECTION_STRING }}"
 
     - name: 🛠️ Install trx2junit Tool
       if: github.event_name == 'pull_request'
